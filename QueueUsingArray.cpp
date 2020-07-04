@@ -6,13 +6,16 @@ class Queue
 {
 	int F;
 	int R;
-	int arr[5];	
+	int n;
+	int *arr;	
 	public:
-		Queue()
+		Queue(int size)
 		{
+			n=size;
+			arr=new int[n];
 			F=-1;
 			R=-1;
-			for(int i=0;i<5;i++)
+			for(int i=0;i<n;i++)
 			{
 				arr[i]=0;
 			}
@@ -72,7 +75,7 @@ class Queue
 		
 		void display()
 		{
-			for(int i=0;i<=4;i++)
+			for(int i=0;i<=n;i++)
 			{
 				cout<<arr[i]<<" ";
 			}
@@ -81,10 +84,10 @@ class Queue
 
 int main()
 {
-	//int n;
-	//cout<<"Enter the number of elements"<<endl;
-	//cin>>n;
-	Queue Q;
+	int n;
+	cout<<"Enter the number of elements"<<endl;
+	cin>>n;
+	Queue Q(n);
 	int opt,val;
 	
 	do
