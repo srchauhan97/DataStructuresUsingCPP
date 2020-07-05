@@ -205,8 +205,7 @@ int main()
 	SinglyLinkedList s;
 	int option;
 	int key1,k1,data1;
-	do
-	{
+	do{
 		cout<<"Select the option or 0 to exit"<<endl;
 		cout<<"1.Append"<<endl;
 		cout<<"2.Prepend"<<endl;
@@ -227,8 +226,8 @@ int main()
 				cout<<"enter key and data"<<endl;
 				cin>>key1;
 				cin>>data1;
-				n1->d = data1;
 				n1->k = key1;
+				n1->d = data1;
 				s.AppendNode(n1);
 				break;
 			
@@ -236,9 +235,10 @@ int main()
 				cout<<"enter key and data"<<endl;
 				cin>>key1;
 				cin>>data1;
-				n1->d = data1;
 				n1->k =key1;
+				n1->d = data1;
 				s.PrependNode(n1);
+				break;
 				
 			case 3:
 				cout<<"enter the key after which we need to entere th node"<<endl;
@@ -246,8 +246,8 @@ int main()
 				cout<<"enter the key and data of the node to be entered"<<endl;
 				cin>>key1;
 				cin>>data1;
-				n1->d = data1;
 				n1->k = key1;
+				n1->d = data1;
 				s.InsertNode(k1,n1);
 				break;
 				
@@ -260,9 +260,7 @@ int main()
 			case 5:
 				cout<<"enter the key and new data to be updated of the node"<<endl;
 				cin>>key1;
-				cin>>data1;
-				n1->k = key1;
-				n1->d = data1;
+				cin>>data1;	
 				s.updateNodebyKey(key1,data1);
 				break;
 			
