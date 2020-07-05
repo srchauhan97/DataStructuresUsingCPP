@@ -31,15 +31,16 @@ class Queue
 		
 		bool isFull()
 		{
-			if(R == sizeof(arr)-1)
+			if(R == n-1)
 				return true;
 			else
 				return false;
 		}
 		void enqueue(int val)
 		{	
-			if(isFull())
-				return;
+			if(isFull()){
+				cout<<"Queue is full"<<endl;
+				return;}
 			else if(isEmpty()){
 				R=F=0;
 				arr[R]=val;}
