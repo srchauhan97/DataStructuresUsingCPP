@@ -14,10 +14,10 @@ class Node
 			d=0;
 			N = NULL;
 		}
-		Node(int k,int d)
+		Node(int key,int data)
 		{
-			this->k = k;
-			this->d = d;
+			k = key;
+			d = data;
 		}
 };
 
@@ -39,7 +39,8 @@ class SinglyLinkedList
 		Node* NodeExists(int key)     // we will check the existance of node using key
 		{
 			Node *temp = NULL;        //creating the temp pointer to store the return address of the existing node
-			Node *ptr = H;            //now assigning the head pointer to the pointer variable
+			Node *ptr = H;
+			while(ptr != NULL){            //now assigning the head pointer to the pointer variable
 			if(ptr->k == key)
 			{
 				//if key is found then save this address to temp pointer
@@ -47,9 +48,10 @@ class SinglyLinkedList
 			}
 			else
 				ptr = ptr->N; //is key is not matched, the we need to check next node.so the add of next node is stored in N which can be accessed with ptr
+			
+			}
 			return temp;
 		}
-		
 		//2. Append using key value(Insert at the end of the list)
 		void AppendNode(Node *n)
 		{
@@ -192,7 +194,7 @@ class SinglyLinkedList
 				Node *temp = H;
 				while(temp != NULL)
 				{
-					cout<<"("<<temp->k<<","<<temp->d<<")  --->";
+					cout<<"("<<temp->k<<","<<temp->d<<")  --->"<<endl;
 					temp=temp->N;
 				}
 			}
@@ -224,8 +226,7 @@ int main()
 			
 			case 1:
 				cout<<"enter key and data"<<endl;
-				cin>>key1;
-				cin>>data1;
+				cin>>key1>>data1;
 				n1->k = key1;
 				n1->d = data1;
 				s.AppendNode(n1);
